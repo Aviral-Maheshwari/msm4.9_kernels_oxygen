@@ -11,7 +11,6 @@
 };
 
 &pmi8950_gpios {
-/*
 	gpio@c000 {
 		qcom,master-en = <0x1>;
 		qcom,mode = <0x1>;
@@ -20,18 +19,6 @@
 		qcom,src-sel = <0x6>;
 		status = "okay";
 	};
-*/
-	status = "okay";
-	pinctrl-names = "default";
-	pinctrl-0 = <&pwm_ir_default>;
-        pwm_ir_default: pwm_ir_default {
-            pins = "gpio1";
-            output-low; /* qcom,mode = <0x1>; && qcom,out-strength = <0x3>; */
-            qcom,drive-strength = <2>; /* qcom,out-strength = <0x3>; */
-            bias-disable; /* qcom,pull = <0x5>; */
-            function = "dtest2"; /* qcom,src-sel = <0x6>; */
-	    status = "okay";
-        };
 };
 
 &soc {
